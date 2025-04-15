@@ -19,6 +19,13 @@ apt_sources_debian_components:
   - main
   - contrib
   - non-free
+  - non-free-firmware
+
+# Specific to Debian Backports not Ubuntu
+apt_sources_debian_backports_components:
+  - main
+  - non-free-firmware
+
 
 # The release class (oldstable, stable, testing, unstable) respectively.
 #

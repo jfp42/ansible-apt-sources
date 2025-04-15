@@ -4,7 +4,7 @@
 {%   for item in apt_sources_archive_types %}
 {{ item }} {{ apt_sources_debian_repository_url }}/{{ ansible_distribution|lower }} {{ apt_sources_debian_distribution }} {{ apt_sources_debian_components|join (' ') }}
 {%     if apt_sources_enable_backports %}
-{{ item }} {{ apt_sources_debian_repository_url }}/{{ ansible_distribution|lower }} {{ ansible_distribution_release|lower }}-backports main
+{{ item }} {{ apt_sources_debian_repository_url }}/{{ ansible_distribution|lower }} {{ ansible_distribution_release|lower }}-backports {{ apt_sources_debian_backports_components|join (' ') }}
 {%     endif %}
 {%     if apt_sources_enable_security %}
 {%          if ansible_distribution_major_version | int < 11 %}
